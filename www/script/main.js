@@ -21,7 +21,7 @@ window.rgb = function(r,g,b) { return "rgb("+r+","+g+","+b+")" }
 window.addEventListener("DOMContentLoaded", function() {
 	"use strict";
 	
-	var SERVER = "http://http://chat.v-id.net/ESSENTRA/";
+	var SERVER = "http://chat.v-id.net/ESSENTRA/";
 	
 	var returnscreen = null,
 		scannerevent = null;
