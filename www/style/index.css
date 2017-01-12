@@ -37,7 +37,7 @@ footer {
 }
 
 header > i#btn-login {
-	display:block; position:fixed; top:3%; right:10%; font-size:20px; color:rgb(255,255,255);
+	display:block; position:fixed; top:2%; right:5%; padding:2%; font-size:20px; color:rgb(255,255,255);
 }
 /*
 main:after {

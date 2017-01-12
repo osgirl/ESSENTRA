@@ -120,7 +120,7 @@ Datepicker.prototype.build = function() {
 		});
 		
 		if(this.today[0] == d && this.today[1] == this.m && this.today[2] == this.y) {
-			td.style.backgroundColor = "rgb(255,255,255)";
+			td.style.backgroundColor = "rgb(245,245,245)";
 		}
 		
 		day++;
