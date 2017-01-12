@@ -222,21 +222,61 @@ window.addEventListener("DOMContentLoaded", function() {
 	}, false);
 	
 	var simpleConsulta = function() {
-		// addLabel($("scanner-reader").querySelector("div"), {
-		 addLabel($("scanner-reader").get("div"), {
-			 code:""+( parseInt(Math.random() * 10e6) ),
-			 status:(parseInt(Math.random()*10e2)%2 == 0)? "true" : "false"
-		 })
+		 var options =  {
+			preferFrontCamera : false, // iOS and Android 
+			showFlipCameraButton : false, // iOS and Android 
+			formats : "QR_CODE", // default: all but PDF_417 and RSS_EXPANDED 
+			prompt : "", // supported on Android only 
+			orientation : "portrait" // Android only (portrait|landscape), default unset so it rotates with the device 
+		}
+		
+		cordova.plugins.barcodeScanner.scan( function (result) {
+			if(result.text) {
+				if(validateCode(result.text)) {
+					AJAX.request({
+						url:SERVER+"index.php",
+						data: { action:"consultar_simples", uuid:device.uuid, serial:result.text },
+						success:function(e) {
+							  addLabel($("scanner-reader").get("div"), {
+								 code: result.text,
+								 status: (e == "true")? "true" : "false"
+							 });
+						},
+						error: function(e) { alert("O dispositivo não pode acessar o servidor, verificque sua conexão!"); }
+					});
+				} else {
+					 addLabel($("scanner-reader").get("div"), {
+						 code: result.text,
+						 status: "false"
+					 });
+				}
+			}
+		}, function (error) { alert("Scanning failed: " + error); }, options);
 	};
 	
 	var readerremessa = function() {
-		var code = prompt("CODE:"), fq = $("fquantidade");
+		var fq = $("fquantidade");
 		
-		if(code != "" && code != null) {
-		//	$("list").querySelector("div").build("label").write(code);
-			$("list").get("div").build("label").write(code);
-			fq.value = parseInt(fq.value) + 1;
-		}
+		var options =  {
+			preferFrontCamera : false, // iOS and Android 
+			showFlipCameraButton : false, // iOS and Android 
+			formats : "QR_CODE", // default: all but PDF_417 and RSS_EXPANDED 
+			prompt : "", // supported on Android only 
+			orientation : "portrait" // Android only (portrait|landscape), default unset so it rotates with the device 
+		};
+		
+		cordova.plugins.barcodeScanner.scan( function (result) {
+			if(result.text) {
+				if(validateCode(result.text)) {
+					$("list").get("div").build("label").write(code);
+					fq.value = parseInt(fq.value) + 1;
+					
+				} else {
+					alert("QR_CODE Invalido!");
+				}
+			}
+		}, function (error) { alert("Scanning failed: " + error); }, options);
+		
 	};
 	
 	var consultarData = function() {
