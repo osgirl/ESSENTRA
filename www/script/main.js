@@ -268,7 +268,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		cordova.plugins.barcodeScanner.scan( function (result) {
 			if(result.text) {
 				if(validateCode(result.text)) {
-					$("list").get("div").build("label").write(code);
+					$("list").get("div").build("label").write(result.text);
 					fq.value = parseInt(fq.value) + 1;
 					
 				} else {
