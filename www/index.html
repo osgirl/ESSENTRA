@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<!-- meta http-equiv="pragma" content="no-cache" / -->
+	<title>ESSENTRA</title>
+	<link rel='stylesheet' href='style/font-awesome/css/font-awesome.min.css' />
+	<link rel='stylesheet' href='style/datepicker.css' />
+	<link rel='stylesheet' href='style/index.css' />
+	<script src="cordova.js" ></script>
+	<script src="script/ajax.js" ></script>
+	<script src="script/datepicker.js" ></script>
+	<script src="script/main.js" ></script>
+  </head>
+  <body>
+	<header>
+		<button id="btn-back" ><i class="fa fa-arrow-left" ></i></button>
+		<i id="btn-login" class="fa fa-user"></i>
+	</header>
+	<main>
+		<section id="home" >
+			<div id="scanner-reader" class="window scanner-list" >
+				<div></div>
+			</div>
+		</section>
+		
+		<section id="login" >
+			<div id="window-login" class="window" >
+				<div>Para utilizar esse recurso digite o código de acesso.</div>
+				<input type="password" id="fpassword" />
+				<button id="btn-login-enter" >OK</button>
+			</div>
+		</section>
+		
+		<section id="manager" >
+			<div id="window-manager" class="window" >
+				<h2>Eventos</h2>
+				<button id="btn-enviar" >• Enviar</button>
+				<button id="btn-receber" >• Receber</button>
+				<button id="btn-consultar" >• Consultar</button>
+			</div>
+		</section>
+		
+		<section id="remessa" >
+			<div id="list" class="scanner-list" > 
+				<div></div> 
+			</div>
+			<div id="form" >
+				<label> Evento: <input id="fevento" readonly /></label>
+				<label> Quantidade: <input id="fquantidade" readonly /></label>
+			</div>
+		</section>
+		
+		<section id="consultar" >
+			<div id="datepicker" ></div>
+			<div id="form" >
+				<label> Data: <input id="fdate" readonly /></label>
+				<label> Eviados: <input id="fenviados" readonly /></label>
+				<label> Entregues: <input id="fentregues" readonly /></label>
+			</div>
+		</section>
+		
+		<section id="error" >
+			<div id="window-error" class="window" >
+				<div></div>
+			</div>
+		</section>
+		
+		<section id="detalhes" >
+			<div id="window-detalhes" >
+				<div></div>
+			</div>
+			<div id="form" >
+				<label> Enviado <input id="fenviado" style="width:70%" readonly /></label>
+				<label> Entregue <input id="fentregue" style="width:70%" readonly /></label>
+			</div>
+		</section>
+		
+	</main>
+	
+	<footer>
+		<button id="btn-scanner" class="btn right" >Scann</button>
+		<button id="btn-registrar" class="btn right" >Registrar</button>
+		<button id="btn-detalhes" class="btn right" data-codes="" >Detalhes</button>
+	</footer>
+  </body>
+</html>

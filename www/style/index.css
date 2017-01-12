@@ -1,0 +1,182 @@
+* { list-style:none; text-decoration:none; outline:none; border:none; margin:0%; padding:0%; font-size:12px;font-family:Arial; }
+body { position:fixed; width:100%; height:100%; background-color:rgba(255,255,255,1); } 
+button, input { background-color: transparent; }
+
+.right {
+	float:right;
+	margin:0% 10%;
+}
+
+.window {
+	position:fixed; 
+	top:15%; bottom:20%;
+	left:10%; right:10%;
+	margin:auto; padding:2%;
+	background-color:rgba(0,0,0,.51);	
+}
+
+button.btn {
+	width:25%; height:55%;
+	margin-top:2%;
+	border-radius:60px;
+	border:1px solid rgb(218,65,56);
+	background-color:rgba(255,255,255,1);
+	color:rgb(218,65,56);
+}
+
+::-webkit-scrollbar { width:3px; }
+/* ::-webkit-scrollbar-thumb { background-color:rgba(218,65,56, .5); } */
+::-webkit-scrollbar-thumb { background-color:rgba(255,255,255, .7); }
+
+header, footer { position:absolute; width:100%; height:10%; box-shadow:1px 1px 15px rgb(130,130,130); z-index:1; }
+header { background-color:rgb(218,65,56); }
+header > button { display:none; width:15%; height:100%; font-size:16px; color:rgb(255,255,255); }
+footer { 
+	padding:1% 0%;
+	bottom:0%; 
+	background-color:rgb(255,255,255); transition:height 0.5s;
+}
+
+header > i#btn-login {
+	display:block; position:fixed; top:3%; right:10%; font-size:16px; color:rgb(255,255,255);
+}
+
+main:after {
+    content:"";
+    display:block;
+    position:absolute;
+    top:0; left:0;
+    background-image: url("background.png"); 
+	background-size:15px 15px;
+    width:100%; height:100%;
+    opacity:0.58;
+    z-index:-1;
+}
+main > section {
+	position:absolute; display:none;
+	top:0; bottom:0; left:0; right:0; margin:auto;
+	background-color:transparent;
+}
+
+div.scanner-list > div {
+	position:relative;
+	display:block;
+	width:100%; height:100%;
+	background-color:transparent;
+	overflow-y:scroll;
+}
+div.scanner-list > div > label {
+	position:relative;
+	display:block;
+	color:rgb(255,255,255);
+	padding:1% 3%; margin:5% 0%;
+}
+div.scanner-list > div > label > small {
+	margin:0% 0% 0% 10%;
+}
+div.scanner-list > div > label > i {
+	float:right;
+	margin:0% 10% 0% 0%;
+}
+
+div#window-login  {
+	text-align:center;
+}
+div#window-login > div {
+	position:absolute;
+	top:0; bottom:25%; left:0; right:0; margin:auto;
+	width:75%; height:25%;
+	color:rgb(255,255,255);
+}
+input#fpassword {
+	position:absolute;
+	top:0; bottom:0; left:0; right:0; margin:auto;
+	width:75%; height:7%;
+	text-align:center;
+	color:rgb(255,255,255);
+	border-bottom:1px solid rgb(255,255,255);
+}
+button#btn-login-enter {
+	position:absolute;
+	top:35%; bottom:0; left:0; right:0; margin:auto;
+	width:70px; height:30px;
+	color:rgb(255,255,255);
+	border:1px solid rgb(255,255,255);
+}
+
+div#window-manager {
+	padding:5%;
+}
+
+div#window-manager > h2 {
+	font-size:18px;
+	color:rgb(160,160,160);
+	text-shadow:2px 3px rgb(10,10,10);
+}
+
+div#window-manager > button {
+	display:block;
+	color:rgb(255,255,255);
+	margin:7% 5%;
+}
+
+/** */
+div#list {
+	position:absolute;
+	top:0; bottom:20%; left:0; right:0; margin:auto; 
+	width:60%; height:45%;
+	padding:1%;
+	background-color:rgba(0,0,0,.51);
+}
+div#form {
+	position:absolute;
+	top:55%; bottom:0; left:0; right:0; margin:auto; 
+	width:70%; height:15%;
+	padding:2%;
+	background-color:rgba(255,255,255,.85);
+	box-shadow:1px 1px 5px rgb(80,80,80);
+}
+div#form > label {
+	display:inline-block;
+	margin:2% 0%;
+}
+div#form > label > input{
+	display:inline-block;
+	width:30%;
+	color:rgb(130,130,130);
+	text-align:center;
+}
+
+div#datepicker, div#window-detalhes {
+	position:absolute;
+	top:0; bottom:20%; left:0; right:0; margin:auto; 
+	width:80%; height:45%;
+	background-color:rgba(255,255,255,.85);
+	box-shadow:1px 1px 5px rgb(80,80,80);
+}
+
+div#window-error > div, div#window-detalhes > div {
+	position:relative;
+	display:block;
+	width:100%; height:100%;
+	background-color:transparent;
+	overflow-y:scroll;
+}
+
+div#window-error  > div > label, div#window-detalhes > div > label {
+	position:relative;
+	display:block;
+	color:rgb(255,255,255);
+	padding:1% 3%; margin:5% 0%;
+}
+div#window-error  > div > label > small, div#window-detalhes > div > label > small {
+	margin:0% 0% 0% 10%;
+}
+div#window-error  > div > label > i {
+/*	float:right; */
+	margin:0% 10% 0% 0%;
+}
+
+div#window-detalhes {
+	background-color:rgba(0,0,0,.51);
+}
