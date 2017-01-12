@@ -1,4 +1,4 @@
-* { list-style:none; text-decoration:none; outline:none; border:none; margin:0%; padding:0%; font-size:12px;font-family:Arial; }
+* { list-style:none; text-decoration:none; outline:none; border:none; margin:0%; padding:0%; font-size:16px;font-family:Arial; }
 body { position:fixed; width:100%; height:100%; background-color:rgba(255,255,255,1); } 
 button, input { background-color: transparent; }
 
@@ -25,12 +25,11 @@ button.btn {
 }
 
 ::-webkit-scrollbar { width:3px; }
-/* ::-webkit-scrollbar-thumb { background-color:rgba(218,65,56, .5); } */
-::-webkit-scrollbar-thumb { background-color:rgba(255,255,255, .7); }
+::-webkit-scrollbar-thumb { background-color:rgba(218,65,56, .5); } 
 
 header, footer { position:absolute; width:100%; height:10%; box-shadow:1px 1px 15px rgb(130,130,130); z-index:1; }
 header { background-color:rgb(218,65,56); }
-header > button { display:none; width:15%; height:100%; font-size:16px; color:rgb(255,255,255); }
+header > button { display:none; width:15%; height:100%; font-size:20px; color:rgb(255,255,255); }
 footer { 
 	padding:1% 0%;
 	bottom:0%; 
@@ -38,18 +37,21 @@ footer {
 }
 
 header > i#btn-login {
-	display:block; position:fixed; top:3%; right:10%; font-size:16px; color:rgb(255,255,255);
+	display:block; position:fixed; top:3%; right:10%; font-size:20px; color:rgb(255,255,255);
 }
 
 main:after {
     content:"";
     display:block;
     position:absolute;
-    top:0; left:0;
-    background-image: url("background.png"); 
-	background-size:15px 15px;
-    width:100%; height:100%;
-    opacity:0.58;
+    top:0; bottom:0; left:0; right:0; margin:auto;
+	background-color:rgb(245,245,245); 
+    background-image: url("../../logo.png"); 
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size:150px 150px;
+    width:100%; height:100%; 
+    opacity:0.3;
     z-index:-1;
 }
 main > section {
@@ -109,7 +111,7 @@ div#window-manager {
 }
 
 div#window-manager > h2 {
-	font-size:18px;
+	font-size:22px;
 	color:rgb(160,160,160);
 	text-shadow:2px 3px rgb(10,10,10);
 }
