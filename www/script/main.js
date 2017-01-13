@@ -82,7 +82,7 @@ window.addEventListener("DOMContentLoaded", function() {
 			btn.scanner.style.display = "block";
 			btn.registrar.style.display = "block";
 			
-			$("fevento").value = "enviar";
+			$("fevento").value = "remessa";
 			$("fquantidade").value = "0";
 			
 			scannerevent = readerremessa;
@@ -315,7 +315,7 @@ window.addEventListener("DOMContentLoaded", function() {
 					
 					console.log(e);
 					
-					$("fenviado").value = e.envio.data.replace(/-/g, "/") + " as " + e.envio.hora;
+					$("fenviado").value = e.remessa.data.replace(/-/g, "/") + " as " + e.remessa.hora;
 					$("fentregue").value = (e.recebimento)? e.recebimento.data.replace(/-/g, "/") + " as " + e.recebimento.hora : "";
 				} 
 			},
