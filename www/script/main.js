@@ -323,7 +323,6 @@ window.addEventListener("DOMContentLoaded", function() {
 		});
 	};
 	
-	app.load();
 	document.addEventListener("deviceready", app.load, false);
 }, false);
 
